@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+  <script>
+  angular.module('app', ['angular-carousel']);
+  </script>
+  <style>
+  .image {
+    height: 100px;
+  }
+  .indicator {
+    border: 1px solid black;
+  }
+  .highlight {
+    background: black;
+    color: white;
+  }
+  </style>
+</head>
+<body ng-init="slides = ['slide 2', 'slide 3', 'slide 4']; carouselIndex=0;">
+
+  <div>
+    <ul rn-carousel rn-carousel-auto-slide="3" rn-carousel-transition="zoom" rn-carousel-index="carouselIndex" class="image">
+      <li ng-repeat="slide in slides" >{{slide}}</li>
+    </ul>
+    <div>
+      <span class="indicator" ng-repeat="slide in slides" ng-class="{highlight: $index === $parent.carouselIndex}" 
+      ng-click="$parent.carouselIndex = $index">{{$index + 1}}</span>
+    </div>
+  </div>
+
+</body>
+</html>
+<html>
+<head></head>
+<body>
+  <div class="heig">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
